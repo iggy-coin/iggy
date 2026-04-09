@@ -195,12 +195,27 @@ footer {
         white-space: nowrap;
     }
 
-    /* HEADLINES FIX */
-    .section h2 {
-        font-size: 1.2rem;
+    /* BUTTON SMALLER */
+    .btn {
+        font-size: 0.75rem;
+        padding: 12px 18px;
     }
 
-    /* TEXT FIX */
+    /* SECTION SPACING */
+    .section {
+        padding: 50px 16px;
+    }
+
+    .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+    }
+
+    .box {
+        padding: 25px 20px;
+    }
+
+    /* TEXT */
     .box p,
     .box li {
         font-size: 0.8rem;
@@ -211,9 +226,8 @@ footer {
     .warning-line {
         display: grid;
         grid-template-columns: auto 1fr auto;
-        align-items: center;
         gap: 8px;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
 
     .warning-icon {
@@ -223,20 +237,22 @@ footer {
 
     .warning-text {
         font-size: 0.75rem;
-        letter-spacing: 1px;
         text-align: center;
-        line-height: 1.4;
     }
 
-    /* 🔥 LIVE NOW 50% SMALLER */
+    /* LIVE NOW */
     .live-now {
         font-size: 1.1rem;
         padding: 10px 20px;
         letter-spacing: 2px;
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
         gap: 8px;
+    }
+
+    /* FOOTER SIZE MATCH */
+    footer {
+        font-size: 0.8rem;
+        opacity: 0.7;
     }
 }
 
@@ -247,6 +263,10 @@ footer {
 
     .title { font-size: 1.9rem; }
 
+    .section {
+        padding: 40px 14px;
+    }
+
     .section h2 {
         font-size: 1rem;
     }
@@ -256,8 +276,17 @@ footer {
         font-size: 0.7rem;
     }
 
+    .btn {
+        font-size: 0.65rem;
+        padding: 10px 14px;
+    }
+
     .live-now {
         font-size: 0.95rem;
         padding: 8px 14px;
+    }
+
+    footer {
+        font-size: 0.7rem;
     }
 }
