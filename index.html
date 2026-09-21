@@ -3,114 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iggy Knightly - $IGGY</title>
+    <title>$IGGY — Ignite the Flame</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="hero">
-    <div class="logo-container">
-        <img src="logo.png" class="logo" alt="Iggy Knighly Logo">
+<!-- NAVIGATION -->
+<nav class="nav">
+    <div class="logo">
+        <img src="logo.png" alt="$IGGY" class="nav-logo">
+        $IGGY
     </div>
 
-    <h1 class="title">$IGGY</h1>
-    <p class="subtitle">Iggy Knightly</p>
+    <div class="menu">
+        <a href="#about">About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#buy">Buy</a>
+    </div>
+</nav>
 
-    <div class="hype-text">
-        <p class="born">BORN TO BURN</p>
-        
-        <div class="warning-line">
-            <img src="warning.png" class="warning-icon" alt="Warning">
-            <span class="warning-text">WARNING: EXTREMELY FLAMMABLE GAINS</span>
-            <img src="warning.png" class="warning-icon" alt="Warning">
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-left">
+        <img src="logo.png" alt="$IGGY Logo" class="hero-logo">
+
+        <div class="hero-text">
+            <span class="pill">CRONOS MEME TOKEN</span>
+
+            <h1>IGNITE<br>THE FLAME.</h1>
+
+            <p>
+                The cleanest meme launch on Cronos.
+                Community driven. No VC. No Presale.
+                Just fire.
+            </p>
+
+            <div class="buttons">
+                <a class="primary" href="#">BUY ON CRONOS</a>
+                <button class="secondary" onclick="copyContract()">COPY CONTRACT</button>
+            </div>
         </div>
     </div>
 
-    <div class="buttons">
-        <a href="#" class="btn primary">LAUNCH ON PUMPFUN</a>
-        <button class="btn secondary" onclick="copyContract()">
-            Copy Contract
-        </button>
-    </div>
+    <div class="launch-card">
+        <h3>LIVE NOW</h3>
 
-    <div class="countdown">
-        <div id="timer" class="live-now">
-            🔥 LIVE NOW 🔥
+        <div class="row">
+            <span>Supply</span>
+            <b>1,000,000,000 IGGY</b>
+        </div>
+        <div class="row">
+            <span>Network</span>
+            <b>Cronos</b>
+        </div>
+        <div class="row">
+            <span>Buy / Sell Tax</span>
+            <b>0 / 0</b>
+        </div>
+        <div class="row">
+            <span>Liquidity</span>
+            <b>Locked</b>
+        </div>
+        <div class="row">
+            <span>Ownership</span>
+            <b>Renounced</b>
         </div>
     </div>
-</div>
+</header>
 
-<div class="container">
-
-<div class="section">
-    <h2>MEET THE FLAME!</h2>
-    <div class="box">
-        <p>Iggy Knightly is not just another meme coin — it's a goddamn wildfire.</p>
-        <p>Rumor has it he’s related to Kira — similarly hot — but nah… just sparks from a different breed.</p>
-        <p>Iggy isn't here to play safe.</p>
-        <p>He's here to set the entire market on fire.</p>
+<!-- ABOUT CARDS -->
+<section id="about" class="grid3">
+    <div class="card">
+        <h3>The Flame</h3>
+        <p>Iggy is the spark that lights the Cronos ecosystem.</p>
     </div>
-</div>
 
-<div class="section">
-    <h2>HOW TO JOIN THE INFERNO</h2>
-    <div class="box">
-        <ol class="how-to-buy-list">
-            <li>Install MetaMask or Phantom</li>
-            <li>Get SOL</li>
-            <li>Go to Pump.fun</li>
-            <li>Connect your wallet</li>
-            <li>Ape into $IGGY</li>
-            <li>Hold the flame and watch it burn</li>
-        </ol>
+    <div class="card">
+        <h3>Tokenomics</h3>
+        <p>Fair launch. Zero taxes. LP locked. Community owned.</p>
     </div>
-</div>
 
-<div class="section">
-    <h2>FUEL THE FIRE</h2>
-    <div class="box">
-        <p>Iggy burns brighter with its community. Let’s spread the fire!</p>
-        <div class="buttons">
-            <a href="https://x.com/iggyknightly" class="btn primary">TWITTER (X)</a>
+    <div class="card">
+        <h3>Mission</h3>
+        <p>Burn timelines with memes. Ignite the community.</p>
+    </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section id="tokenomics" class="tokenomics">
+    <h2>Tokenomics</h2>
+
+    <div class="stats">
+        <div class="stat">
+            <span>Total Supply</span>
+            <strong>1,000,000,000</strong>
+        </div>
+        <div class="stat">
+            <span>Buy Tax</span>
+            <strong>0%</strong>
+        </div>
+        <div class="stat">
+            <span>Sell Tax</span>
+            <strong>0%</strong>
+        </div>
+        <div class="stat">
+            <span>Liquidity</span>
+            <strong>Locked Forever</strong>
+        </div>
+        <div class="stat">
+            <span>Ownership</span>
+            <strong>Renounced</strong>
+        </div>
+        <div class="stat">
+            <span>Community</span>
+            <strong>100%</strong>
         </div>
     </div>
-</div>
+</section>
 
-</div>
+<!-- ROADMAP -->
+<section id="roadmap">
+    <h2>Roadmap</h2>
 
+    <div class="roadmap">
+        <div class="step">
+            <span>01</span>
+            <h4>Ignition</h4>
+            <p>Website · Socials · Community</p>
+        </div>
+        <div class="step">
+            <span>02</span>
+            <h4>Launch</h4>
+            <p>Cronos launch & LP lock.</p>
+        </div>
+        <div class="step">
+            <span>03</span>
+            <h4>Expansion</h4>
+            <p>DexTools · DexScreener · Listings.</p>
+        </div>
+        <div class="step">
+            <span>04</span>
+            <h4>Inferno</h4>
+            <p>Memes everywhere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TO BUY -->
+<section id="buy">
+    <h2>How to Buy</h2>
+
+    <div class="buy-grid">
+        <div class="buy-card">
+            <b>1</b>
+            <p>Open a DeFi Wallet.</p>
+        </div>
+        <div class="buy-card">
+            <b>2</b>
+            <p>Buy CRO.</p>
+        </div>
+        <div class="buy-card">
+            <b>3</b>
+            <p>Swap CRO for IGGY.</p>
+        </div>
+        <div class="buy-card">
+            <b>4</b>
+            <p>Join the Inferno.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    (2026) Iggy Coin • Community-driven meme token • Not financial advice.
+    <h2>$IGGY</h2>
+    <p>Community Driven Meme Token</p>
+    <p class="contract">Contract: PASTE_CONTRACT_ADDRESS_HERE</p>
 </footer>
+
+<!-- TOAST -->
+<div id="toast">Contract copied 🔥</div>
 
 <script>
 function copyContract() {
-    const contract = "PASTE_YOUR_CONTRACT_ADDRESS_HERE";
+    const contract = "PASTE_CONTRACT_ADDRESS_HERE";
     navigator.clipboard.writeText(contract);
 
-    const msg = document.createElement("p");
-    msg.textContent = "Contract copied! 🔥";
-    msg.style.color = "#ffcc00";
-    msg.style.position = "fixed";
-    msg.style.bottom = "30px";
-    msg.style.left = "50%";
-    msg.style.transform = "translateX(-50%)";
-    msg.style.fontFamily = "'Press Start 2P', system-ui";
-    document.body.appendChild(msg);
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
 
-    setTimeout(() => msg.remove(), 2000);
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
 }
-
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 120) {
-            sec.classList.add('visible');
-        }
-    });
-});
 </script>
 
 </body>

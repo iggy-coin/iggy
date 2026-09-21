@@ -1,292 +1,575 @@
+/* =========================================
+   ROOT
+========================================= */
+:root {
+    --cyan: #25D7FF;
+    --background: #F7FDFF;
+    --text: #111827;
+}
+
+/* =========================================
+   RESET
+========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: linear-gradient(to bottom, #0a1f4a, #1e3a8a);
-    color: #ffffff;
-    font-family: 'Press Start 2P', system-ui;
-    line-height: 1.6;
-    image-rendering: pixelated;
+    font-family: "Space Grotesk", sans-serif;
+    background: var(--background);
+    color: var(--text);
 }
 
-/* ==================== HERO ==================== */
-.hero {
-    min-height: 100vh;
+/* =========================================
+   NAVIGATION
+========================================= */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 102, 0, 0.15), transparent 70%);
-    z-index: 0;
-}
-
-.logo-container {
-    margin-bottom: 25px;
-    filter: drop-shadow(0 0 55px #ffcc00);
-    z-index: 1;
+    justify-content: space-between;
+    padding: 18px 8%;
+    background: rgba(247, 253, 255, 0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 .logo {
-    width: 280px;
-}
-
-/* TEXT */
-.title {
-    font-size: 3.2rem;
-    color: #ffcc00;
-    text-shadow: 0 0 25px #ff6600;
-    margin-bottom: 8px;
-    z-index: 1;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    color: #ffdd88;
-    margin-bottom: 40px;
-    letter-spacing: 3px;
-}
-
-/* HYPE */
-.hype-text {
-    margin: 30px 0 50px;
-    z-index: 1;
-    overflow-x: hidden;
-}
-
-.born {
-    font-size: 2rem;
-    color: #ffcc00;
-    text-shadow: 0 0 20px #ff6600;
-    margin-bottom: 25px;
-    letter-spacing: 4px;
-}
-
-/* WARNING */
-.warning-line {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 800;
 }
 
-.warning-icon {
-    width: 45px;
-    height: 45px;
+.nav-logo {
+    width: 48px;
+    height: 48px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
-.warning-text {
-    font-size: 1.15rem;
-    color: #ffdd88;
-    letter-spacing: 2px;
-    text-shadow: 0 0 12px #ff6600;
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
 }
 
-/* BUTTONS */
+.menu a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.menu a:hover {
+    color: var(--cyan);
+}
+
+/* =========================================
+   HERO
+========================================= */
+.hero {
+    padding: 70px 8%;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 48px;
+    align-items: center;
+    min-height: 85vh;
+    background:
+        radial-gradient(circle at 0% 50%, rgba(37,215,255,0.13), transparent 40%),
+        radial-gradient(circle at 100% 50%, rgba(37,215,255,0.08), transparent 40%),
+        var(--background);
+}
+
+.hero-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-logo {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(0 20px 40px rgba(37, 215, 255, 0.25));
+}
+
+/* =========================================
+   HERO TEXT
+========================================= */
+.hero-text {
+    position: relative;
+}
+
+.pill {
+    display: inline-block;
+    background: #DFF9FF;
+    color: #12B7E5;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 68px;
+    line-height: .95;
+    font-weight: 800;
+    margin: 18px 0;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 28px;
+    max-width: 520px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
-}
-
-.btn {
-    padding: 18px 34px;
-    border-radius: 8px;
-    font-family: 'Press Start 2P', system-ui;
-    font-size: 1rem;
+    padding: 18px 28px;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
+    transition: .25s;
 }
 
-.btn.primary {
-    background: #ff6600;
-    color: #000;
-    box-shadow: 0 0 30px #ffcc00;
-}
-
-.btn.secondary {
-    background: transparent;
+.primary {
+    background: var(--cyan);
     color: white;
-    border: 3px solid #ffcc00;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 15px 35px rgba(37,215,255,.35);
 }
 
-/* LIVE NOW */
-.live-now {
-    font-size: 2.3rem;
-    color: #ffcc00;
-    text-shadow: 0 0 30px #ff6600;
-    letter-spacing: 4px;
-    background: rgba(255,255,255,0.08);
-    padding: 22px 60px;
-    border: 3px solid #ffcc00;
-    border-radius: 12px;
-    display: inline-block;
-    white-space: nowrap;
+.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(37,215,255,.45);
 }
 
-/* ==================== SECTIONS ==================== */
-.section {
-    padding: 80px 20px;
-    background: #0a1f4a;
+.secondary {
+    background: white;
+    color: var(--cyan);
+    border: 2px solid var(--cyan);
 }
 
-.section h2 {
-    font-size: 1.8rem;
+.secondary:hover {
+    background: var(--cyan);
+    color: white;
+}
+
+/* =========================================
+   LAUNCH CARD
+========================================= */
+.launch-card {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid #DDF5FC;
+    box-shadow: 0 20px 45px rgba(0,0,0,.08);
+}
+
+.launch-card h3 {
+    color: var(--cyan);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #EEF2F7;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row span {
+    color: #777;
+}
+
+.row b {
+    text-align: right;
+}
+
+/* =========================================
+   THREE CARDS (ABOUT)
+========================================= */
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 60px 8% 90px;
+}
+
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 22px;
+    border: 1px solid #E1F5FA;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(37,215,255,.16);
+}
+
+.card h3 {
+    color: var(--cyan);
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+}
+
+.card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+.tokenomics,
+#roadmap,
+#buy {
+    padding: 90px 8%;
+}
+
+h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 38px;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+   TOKENOMICS
+========================================= */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.stat {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #E1F5FA;
+    transition: .25s;
+}
+
+.stat:hover {
+    transform: translateY(-4px);
+}
+
+.stat span {
+    display: block;
+    color: #777;
+    font-size: .95rem;
+    margin-bottom: 10px;
+}
+
+.stat strong {
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   ROADMAP
+========================================= */
+.roadmap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    border-top: 5px solid var(--cyan);
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+}
+
+.step span {
+    color: var(--cyan);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.step h4 {
+    font-size: 1.2rem;
+    margin: 14px 0 8px;
+}
+
+.step p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* =========================================
+   HOW TO BUY
+========================================= */
+.buy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.buy-card {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
     text-align: center;
-    margin-bottom: 30px;
-    color: #ffcc00;
+    border: 1px solid #E1F5FA;
 }
 
-.box {
-    background: rgba(255,255,255,0.08);
-    border: 2px solid #ff6600;
-    border-radius: 12px;
-    padding: 45px 40px;
-    max-width: 820px;
-    margin: 0 auto;
+.buy-card b {
+    display: inline-flex;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    background: var(--cyan);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
 }
 
-.box p, .box li {
-    color: #ddd;
-    margin-bottom: 15px;
-    font-size: 1rem;
+.buy-card p {
+    color: #555;
 }
 
-.how-to-buy-list {
-    padding-left: 25px;
-    line-height: 1.9;
-    font-size: 1.05rem;
-}
-
-.how-to-buy-list li::marker {
-    color: #ffcc00;
-}
-
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 footer {
+    padding: 80px 8%;
     text-align: center;
-    padding: 60px 20px;
-    color: #888;
+    background: #111827;
+    color: white;
 }
 
-/* ==================== MOBILE ==================== */
-@media (max-width: 768px) {
+footer h2 {
+    color: var(--cyan);
+    margin-bottom: 12px;
+}
 
-    .logo { width: 210px; }
+footer p {
+    color: #B8C1CC;
+}
 
-    .title { font-size: 2.3rem; }
-    .subtitle { font-size: 1rem; }
+.contract {
+    margin-top: 22px;
+    color: var(--cyan) !important;
+    word-break: break-all;
+}
 
-    .born {
-        font-size: 1.3rem;
-        white-space: nowrap;
+/* =========================================
+   COPY TOAST
+========================================= */
+#toast {
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%) translateY(100px);
+    background: #111827;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    opacity: 0;
+    transition: .35s;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 1100px) {
+    .hero-logo {
+        width: 220px;
     }
-
-    /* BUTTON SMALLER */
-    .btn {
-        font-size: 0.75rem;
-        padding: 12px 18px;
+    .hero h1 {
+        font-size: 56px;
     }
+}
 
-    /* SECTION SPACING */
-    .section {
-        padding: 50px 16px;
-    }
-
-    .section h2 {
-        font-size: 1.2rem;
-        margin-bottom: 18px;
-    }
-
-    .box {
-        padding: 25px 20px;
-    }
-
-    /* TEXT */
-    .box p,
-    .box li {
-        font-size: 0.8rem;
-        line-height: 1.6;
-    }
-
-    /* WARNING */
-    .warning-line {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 8px;
-        margin-bottom: 30px;
-    }
-
-    .warning-icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .warning-text {
-        font-size: 0.75rem;
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 1fr;
         text-align: center;
+        padding-top: 80px;
     }
 
-    /* LIVE NOW */
-    .live-now {
-        font-size: 1.1rem;
-        padding: 10px 20px;
-        letter-spacing: 2px;
-        display: inline-flex;
-        gap: 8px;
+    .hero-left {
+        flex-direction: column;
+        gap: 30px;
     }
 
-    /* FOOTER SIZE MATCH */
-    footer {
-        font-size: 0.8rem;
-        opacity: 0.7;
+    .hero-logo {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .grid3 {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roadmap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .buy-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* EXTRA SMALL */
-@media (max-width: 480px) {
-
-    .logo { width: 180px; }
-
-    .title { font-size: 1.9rem; }
-
-    .section {
-        padding: 40px 14px;
+@media (max-width: 650px) {
+    .nav {
+        padding: 16px 6%;
     }
 
-    .section h2 {
-        font-size: 1rem;
+    .nav-logo {
+        width: 40px;
+        height: 40px;
     }
 
-    .box p,
-    .box li {
-        font-size: 0.7rem;
+    .menu {
+        display: none;
     }
 
-    .btn {
-        font-size: 0.65rem;
-        padding: 10px 14px;
+    .hero {
+        padding: 60px 6%;
+        min-height: auto;
     }
 
-    .live-now {
-        font-size: 0.95rem;
-        padding: 8px 14px;
+    .hero-logo {
+        width: 180px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .primary,
+    .secondary {
+        width: 100%;
+    }
+
+    .launch-card {
+        text-align: left;
+    }
+
+    .grid3 {
+        padding: 40px 6% 70px;
+    }
+
+    .tokenomics,
+    #roadmap,
+    #buy {
+        padding: 70px 6%;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap {
+        grid-template-columns: 1fr;
+    }
+
+    .buy-grid {
+        grid-template-columns: 1fr;
     }
 
     footer {
-        font-size: 0.7rem;
+        padding: 60px 6%;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-logo {
+        width: 150px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .pill {
+        font-size: 12px;
+    }
+
+    .launch-card {
+        padding: 22px;
+    }
+
+    .row {
+        font-size: 13px;
     }
 }
