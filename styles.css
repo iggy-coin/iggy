@@ -331,12 +331,14 @@ img {
 .hero {
     isolation: isolate;
     min-height: 100svh;
+    height: 100svh;
+    max-height: 100svh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 20px;
     width: 100%;
-    padding: 130px 7% 90px;
+    padding: 110px 7% 50px;
     overflow: hidden;
 }
 
@@ -480,7 +482,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 17px;
-    margin-top: 28px;
+    margin-top: 22px;
     color: #687585;
     font-size: 8px;
     font-weight: 700;
@@ -505,8 +507,8 @@ img {
     position: relative;
     z-index: 2;
     display: grid;
-    width: min(600px, 48vw);
-    height: min(650px, 60vw);
+    width: min(520px, 42vw);
+    height: min(560px, 52vw);
     place-items: center;
     justify-self: end;
     transition: transform .5s var(--ease);
@@ -515,8 +517,8 @@ img {
 .hero-logo {
     position: relative;
     z-index: 5;
-    width: min(470px, 41vw);
-    max-height: 600px;
+    width: min(400px, 36vw);
+    max-height: 520px;
     object-fit: contain;
     filter:
         drop-shadow(0 0 20px rgba(37,215,255,.18))
@@ -662,7 +664,7 @@ img {
     position: absolute;
     z-index: 5;
     right: 7%;
-    bottom: 30px;
+    bottom: 24px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1853,16 +1855,19 @@ footer {
     }
 
     .hero {
-        grid-template-columns: .9fr 1.1fr;
+        grid-template-columns: .95fr 1.05fr;
         padding-inline: 6%;
+        height: 100svh;
+        max-height: 100svh;
     }
 
     .hero-character {
-        width: min(520px, 52vw);
+        width: min(460px, 48vw);
+        height: min(500px, 55vw);
     }
 
     .hero-logo {
-        width: min(410px, 45vw);
+        width: min(360px, 40vw);
     }
 
     .buy-grid {
@@ -1935,42 +1940,84 @@ footer {
 
     .hero {
         grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 150px;
+        grid-template-rows: auto auto;
+        height: auto;
+        max-height: none;
+        min-height: 100svh;
+        padding: 100px 6% 60px;
         text-align: center;
+        gap: 8px;
+    }
+
+    /* Logo (IGGY) zuerst */
+    .hero-character {
+        order: -1;
+        width: min(280px, 70vw);
+        height: min(300px, 75vw);
+        justify-self: center;
+        margin: 0 auto 10px;
+    }
+
+    .hero-logo {
+        width: min(240px, 62vw);
+        max-height: 280px;
     }
 
     .hero-copy {
-        max-width: 720px;
+        order: 1;
+        max-width: 100%;
         margin-inline: auto;
+        padding-top: 8px;
     }
 
     .eyebrow {
         justify-content: center;
     }
 
+    .hero h1 {
+        margin: 16px 0 18px;
+        font-size: clamp(42px, 12vw, 64px);
+        letter-spacing: -3px;
+    }
+
     .hero-lead {
         margin-inline: auto;
+        font-size: 15px;
+        max-width: 340px;
     }
 
-    .hero-actions,
+    .hero-actions {
+        justify-content: center;
+        margin-top: 24px;
+    }
+
     .hero-proof {
         justify-content: center;
-    }
-
-    .hero-character {
-        width: min(600px, 90vw);
-        height: min(600px, 90vw);
-        justify-self: center;
-        margin-top: -20px;
-    }
-
-    .hero-logo {
-        width: min(450px, 75vw);
+        margin-top: 20px;
+        gap: 12px 16px;
     }
 
     .hero-scroll {
         display: none;
+    }
+
+    .character-ring {
+        width: 90%;
+    }
+
+    .ring-two {
+        width: 105%;
+    }
+
+    .character-flame {
+        width: 50px;
+        height: 90px;
+        opacity: .22;
+    }
+
+    .character-caption {
+        bottom: 0;
+        font-size: 7px;
     }
 
     .story-grid,
@@ -2041,29 +2088,60 @@ footer {
     }
 
     .hero {
-        padding: 125px 6% 75px;
-    }
-
-    .hero h1 {
-        font-size: clamp(48px, 15vw, 76px);
-        letter-spacing: -4px;
+        padding: 90px 5% 50px;
+        gap: 4px;
     }
 
     .hero-character {
-        height: 100vw;
-        margin-top: -10px;
+        width: min(240px, 68vw);
+        height: min(260px, 72vw);
+        margin: 0 auto 6px;
     }
 
     .hero-logo {
-        width: 84vw;
+        width: min(210px, 58vw);
+        max-height: 240px;
     }
 
-    .character-ring {
-        width: 85%;
+    .hero h1 {
+        font-size: clamp(38px, 13vw, 56px);
+        letter-spacing: -2.5px;
+        margin: 14px 0 14px;
     }
 
-    .ring-two {
-        width: 98%;
+    .hero-lead {
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 320px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+        max-width: 280px;
+        margin-inline: auto;
+    }
+
+    .hero-proof {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 18px;
+        font-size: 9px;
+    }
+
+    .character-halo {
+        width: 70%;
+    }
+
+    .character-spark {
+        display: none;
     }
 
     .section-number {
