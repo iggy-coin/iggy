@@ -37,7 +37,7 @@
         </div>
 
         <div class="nav-actions">
-            <a class="nav-buy" href="https://launch.cronos.com/">BUY $IGGY <span>↗</span></a>
+            <a class="nav-buy" href="https://launch.cronos.com/token/0xa21012b230bc13c9235422e24dda2ef960581af7">BUY $IGGY <span>↗</span></a>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -69,7 +69,7 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a class="button button-primary" href="https://launch.cronos.com/">
+                    <a class="button button-primary" href="https://launch.cronos.com/token/0xa21012b230bc13c9235422e24dda2ef960581af7">
                         <span>BUY $IGGY</span>
                         <b>↗</b>
                     </a>
@@ -83,7 +83,7 @@
                     <button class="button button-primary copy-contract-btn" type="button" data-copy-contract>
                         <span>COPY CONTRACT</span><b>📋</b>
                     </button>
-                    <div class="contract-placeholder">PASTE ADDRESS HERE</div>
+                    <div class="contract-placeholder">0xa21012b230bc13c9235422e24dda2ef960581af7</div>
                 </div>
 
                 <div class="hero-proof">
@@ -270,7 +270,7 @@
                 <div class="contract-row">
                     <div>
                         <span>FLAME ADDRESS</span>
-                        <code id="contractText">PASTE_CONTRACT_ADDRESS_HERE</code>
+                        <code id="contractText">0xa21012b230bc13c9235422e24dda2ef960581af7</code>
                     </div>
                     <button class="copy-button" id="copyButton" type="button">COPY <span>↗</span></button>
                 </div>
@@ -395,7 +395,7 @@
             </div>
 
             <div class="buy-action reveal">
-                <a href="#" class="button button-primary big-button">
+                <a href="https://launch.cronos.com/token/0xa21012b230bc13c9235422e24dda2ef960581af7" class="button button-primary big-button">
                     <span>BUY $IGGY</span><b>↗</b>
                 </a>
 
@@ -403,7 +403,7 @@
                     <span>COPY CONTRACT</span><b>📋</b>
                 </button>
 
-                <div class="contract-placeholder bottom-placeholder">PASTE ADDRESS HERE</div>
+                <div class="contract-placeholder bottom-placeholder">0xa21012b230bc13c9235422e24dda2ef960581af7</div>
 
                 <p>Always verify the official contract address before trading.</p>
             </div>
@@ -456,14 +456,14 @@
 
         <div class="footer-bottom">
             <span>© 2026 IGGY KNIGHTLY. KEEP THE FLAME ALIVE.</span>
-            <span class="footer-contract">CONTRACT: <b>PASTE_CONTRACT_ADDRESS_HERE</b></span>
+            <span class="footer-contract">CONTRACT: <b>0xa21012b230bc13c9235422e24dda2ef960581af7</b></span>
         </div>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite">CONTRACT COPIED 🔥</div>
 
     <script>
-        const contract = "PASTE_CONTRACT_ADDRESS_HERE";
+        const contract = "0xa21012b230bc13c9235422e24dda2ef960581af7";
 
         // Mobile menu
         const menuToggle = document.getElementById("menuToggle");
@@ -515,11 +515,6 @@
         const toast = document.getElementById("toast");
 
         copyButtons.forEach(copyButton => copyButton.addEventListener("click", async () => {
-            if (!contract || contract.includes("PASTE_CONTRACT")) {
-                showToast("ADD THE CONTRACT ADDRESS FIRST");
-                return;
-            }
-
             try {
                 await navigator.clipboard.writeText(contract);
                 showToast("CONTRACT COPIED 🔥");
