@@ -33,7 +33,6 @@
             <a href="#story">Meet Iggy</a>
             <a href="#flame">The Flame</a>
             <a href="#journey">Journey</a>
-            <a href="#archives">Archives</a>
             <a href="#community">Community</a>
         </div>
 
@@ -78,6 +77,13 @@
                         <span>MEET IGGY</span>
                         <b>↓</b>
                     </a>
+                </div>
+
+                <div class="hero-contract-box">
+                    <button class="button button-primary copy-contract-btn" type="button" data-copy-contract>
+                        <span>COPY CONTRACT</span><b>📋</b>
+                    </button>
+                    <div class="contract-placeholder">PASTE ADDRESS HERE</div>
                 </div>
 
                 <div class="hero-proof">
@@ -345,65 +351,9 @@
             </div>
         </section>
 
-        <!-- ARCHIVES -->
-        <section class="archives section-light" id="archives">
-            <div class="section-number dark-number">04 / THE ARCHIVES</div>
-
-            <div class="archives-heading reveal">
-                <div>
-                    <p class="eyebrow blue">MEMES / CULTURE / CHAOS</p>
-                    <h2>THE IGGY<br><span>ARCHIVES.</span></h2>
-                </div>
-                <p>
-                    The flame needs fuel. This is where the community drops the memes,
-                    moments and creations that keep Iggy moving.
-                </p>
-            </div>
-
-            <div class="meme-grid">
-                <article class="meme-card meme-large reveal">
-                    <div class="meme-art">
-                        <img src="logo.png" alt="Iggy Knightly">
-                        <span>THE FLAME<br>HAS ARRIVED.</span>
-                    </div>
-                    <div class="meme-meta">
-                        <span>01 / ORIGIN</span>
-                        <b>THE FIRST SPARK</b>
-                    </div>
-                </article>
-
-                <article class="meme-card meme-red reveal reveal-delay">
-                    <div class="meme-art">
-                        <strong>KNIGHT<br>MODE.</strong>
-                        <span>ON</span>
-                    </div>
-                    <div class="meme-meta">
-                        <span>02 / ATTITUDE</span>
-                        <b>SUIT UP, IGGY.</b>
-                    </div>
-                </article>
-
-                <article class="meme-card meme-blue reveal reveal-delay-2">
-                    <div class="meme-art">
-                        <span class="big-flame">🔥</span>
-                        <strong>ONE<br>INFERNO.</strong>
-                    </div>
-                    <div class="meme-meta">
-                        <span>03 / CULTURE</span>
-                        <b>KEEP IT HOT.</b>
-                    </div>
-                </article>
-            </div>
-
-            <div class="archive-cta reveal">
-                <span>HAVE AN IGGY MEME?</span>
-                <a href="#community">SEND IT INTO THE INFERNO ↗</a>
-            </div>
-        </section>
-
         <!-- HOW TO BUY -->
         <section class="buy-section section-dark" id="buy">
-            <div class="section-number">05 / JOIN THE FLAME</div>
+            <div class="section-number">04 / JOIN THE FLAME</div>
 
             <div class="buy-heading reveal">
                 <p class="eyebrow muted">HOW TO ENTER</p>
@@ -445,11 +395,16 @@
             </div>
 
             <div class="buy-action reveal">
-                <!-- Replace # with the official swap URL before launch. -->
                 <a href="#" class="button button-primary big-button">
-                    <span>BUY $IGGY</span>
-                    <b>↗</b>
+                    <span>BUY $IGGY</span><b>↗</b>
                 </a>
+
+                <button class="button button-primary copy-contract-btn big-button" type="button" data-copy-contract>
+                    <span>COPY CONTRACT</span><b>📋</b>
+                </button>
+
+                <div class="contract-placeholder bottom-placeholder">PASTE ADDRESS HERE</div>
+
                 <p>Always verify the official contract address before trading.</p>
             </div>
         </section>
@@ -466,7 +421,6 @@
                 </p>
 
                 <div class="socials">
-                    <!-- Replace # with official social URLs. -->
                     <a href="https://x.com/iggy_knightly" aria-label="X / Twitter">𝕏 <span>FOLLOW</span></a>
                     <a href="#" aria-label="Telegram">✈ <span>JOIN</span></a>
                     <a href="#" aria-label="Discord">◉ <span>ENTER</span></a>
@@ -496,7 +450,6 @@
                 <a href="#story">Meet Iggy</a>
                 <a href="#flame">The Flame</a>
                 <a href="#journey">Journey</a>
-                <a href="#archives">Archives</a>
                 <a href="#community">Community</a>
             </div>
         </div>
@@ -558,10 +511,10 @@
         document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
         // Copy contract
-        const copyButton = document.getElementById("copyButton");
+        const copyButtons = document.querySelectorAll("[data-copy-contract], #copyButton");
         const toast = document.getElementById("toast");
 
-        copyButton.addEventListener("click", async () => {
+        copyButtons.forEach(copyButton => copyButton.addEventListener("click", async () => {
             if (!contract || contract.includes("PASTE_CONTRACT")) {
                 showToast("ADD THE CONTRACT ADDRESS FIRST");
                 return;
@@ -573,7 +526,7 @@
             } catch (error) {
                 showToast("COPY FAILED — COPY IT MANUALLY");
             }
-        });
+        }));
 
         function showToast(message) {
             toast.textContent = message;

@@ -434,6 +434,7 @@ img {
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
     margin-top: 32px;
 }
@@ -442,18 +443,27 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    min-height: 54px;
-    padding: 0 22px;
-    border-radius: 13px;
+    gap: 14px;
+    min-height: 48px;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 12px;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.6px;
-    transition: transform .25s var(--ease), box-shadow .25s ease, background .25s ease;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .button b {
-    font-size: 16px;
+    font-size: 14px;
+}
+
+.big-button {
+    width: 100%;
+    max-width: 320px;
+    min-height: 48px;
+    height: 48px;
 }
 
 .button-primary {
@@ -1940,7 +1950,6 @@ footer {
         transform: translateY(-6px) rotate(-45deg);
     }
 
-    /* Container: 100% der Content-Breite, kein 88vw-Overflow */
     :root {
         --container: 100%;
     }
@@ -1957,7 +1966,6 @@ footer {
         overflow: hidden;
     }
 
-    /* Logo (IGGY) zuerst */
     .hero-character {
         order: -1;
         width: min(280px, 72%);
@@ -2019,7 +2027,6 @@ footer {
         display: none;
     }
 
-    /* Ringe nicht über den Viewport hinaus */
     .character-ring {
         width: 88%;
         max-width: 100%;
@@ -2370,6 +2377,7 @@ footer {
         padding-right: 4%;
     }
 }
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2383,4 +2391,56 @@ footer {
     .cursor-glow {
         display: none;
     }
+}
+
+/* ===== V3 CONTRACT BUTTONS ===== */
+
+.button {
+    min-height: 48px !important;
+    height: 48px !important;
+    padding: 0 18px !important;
+    gap: 14px !important;
+    border-radius: 12px;
+}
+
+.button b {
+    font-size: 14px !important;
+}
+
+.big-button {
+    width: 100%;
+    max-width: 320px;
+    min-height: 48px !important;
+    height: 48px !important;
+}
+
+.hero-contract-box {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.copy-contract-btn {
+    cursor: pointer;
+}
+
+.contract-placeholder {
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+.buy-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.bottom-placeholder {
+    text-align: center;
 }
